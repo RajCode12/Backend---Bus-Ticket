@@ -1,0 +1,30 @@
+package com.example.demo.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.pojo.Payment;
+import com.example.demo.repo.PaymentRepository;
+
+public class PaymentServiceImpl implements PaymentService{
+	
+	@Autowired
+	PaymentRepository payRepo;
+
+	@Override
+	public Payment createNewPayment(Payment pay) {
+		return payRepo.save(pay);
+	}
+
+	@Override
+	public Payment getPaymentByPnr(int pnr) {
+		Payment p = payRepo.findByPnr(pnr);
+		return p;
+	}
+
+	@Override
+	public List<Payment> getPaymentList() {
+		List<Payment> payList = (List<Payment>) payRepo.findAll();
+        return payList;
+	}
+
+}

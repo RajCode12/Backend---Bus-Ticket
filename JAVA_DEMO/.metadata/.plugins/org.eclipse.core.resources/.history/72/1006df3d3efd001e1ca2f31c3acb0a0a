@@ -1,0 +1,10 @@
+package com.example.demo.service;
+
+import java.util.List;
+import com.example.demo.pojo.Payment;
+
+public interface PaymentService {
+	Payment createNewPayment(Payment pay);
+	List<Payment> getPaymentByPnr(int pnr);
+	List<Payment> getPaymentList();
+}

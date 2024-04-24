@@ -1,0 +1,43 @@
+package com.example.demo;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.example.demo.pojo.Bus;
+import com.example.demo.repo.BusRepository;
+
+
+@SpringBootTest
+public class BusRepositoryTesting {
+	@MockBean
+	private BusRepository busRepo;
+	
+	@MockBean
+	private Bus busObj;
+	
+	@Test
+	public void createRecordTest() {
+		busObj.setId(1001);
+		busObj.setSource("A");
+		busObj.setDestination("B");
+		busObj.setDate(new Date());
+		busRepo.save(busObj);
+	}
+	
+//	@Test
+//    public void deleteRecordTest(Bus bus) {
+//        int id = bus.getId();
+//        busObj.setId(id);
+//        busRepo.deleteById(id);
+//    }
+//
+//    @Test
+//    public List<Bus> GetAllRecordsTest() {
+//        List<Bus> busList = (List<Bus>) busRepo.findAll();
+//        return busList;
+//    }
+//	
+}

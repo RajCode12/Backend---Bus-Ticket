@@ -1,0 +1,32 @@
+package com.example.demo.pojo;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="payment_tbl")
+public class Payment {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="pnr")
+	private int pnr;
+	
+	@Column(name="upi_id")
+	private String upi;
+	
+	@Column(name="amount")
+	private double amount;
+	
+	
+	
+}
